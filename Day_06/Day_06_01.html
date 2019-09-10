@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		
+		<link rel="stylesheet" href="css/A.css" />
+	</head>
+	
+	<script>
+		var str="";
+		
+		function jisuan(){
+			var display=document.getElementById("display");
+			if (event.srcElement.innerText=="=") {
+				return; /*return终止程序*/
+			}			
+			if (event.srcElement.innerText=="c") {  /*清空*/
+				str="";
+				display.innerText=0;
+				return;
+			}			
+			if(event.srcElement.className==""){
+					return;
+			}			
+			str+=event.srcElement.innerText; /*获取当前点击文本的元素值*/			
+			display.innerText=str;
+		}
+
+		function jieguo(){
+			
+		var display=document.getElementById("display");
+		var re1=/^[\*|\/].+/;
+		
+         if (str.match(re1)) {
+        	 display.innerText="输入错误";
+         	 str="";
+         	 return;
+         }
+		 else{
+		 	var jieguo=eval(str);  /*eval() 计算的字符串   自动拆分str 并计算出结果 返回给调用者*/
+			str=jieguo;
+			display.innerText=jieguo;	
+		 }											
+		}
+				
+	</script>
+	
+	<body>
+		
+		<table id="calculater" onClick="jisuan()">
+
+        <tr>
+            <td id="display" colspan="5">0</td>   <!--colspan合并列属性-->
+        </tr>
+
+        <tr>
+            <td class="numberkey" >1</td>
+            <td class="numberkey" >2</td>
+            <td class="numberkey" >3</td>
+            <td class="numberkey" >+</td>
+            <td class="numberkey"  id="deletesign">c</td>   <!--清空-->
+        </tr>
+
+        <tr>
+            <td class="numberkey" >4</td>
+            <td class="numberkey" >5</td>
+            <td class="numberkey" >6</td>
+            <td class="numberkey" >-</td>
+            <td rowspan="3" id="equality" onclick="jieguo()">=</td> 
+        </tr>
+
+        <tr>
+            <td class="numberkey" >7</td>
+            <td class="numberkey" >8</td>
+            <td class="numberkey" >7</td>
+            <td class="numberkey" >*</td>
+        </tr>
+
+        <tr >
+            <td class="numberkey" >+/-</td>
+            <td class="numberkey" >0</td>
+            <td class="numberkey" >.</td>
+            <td class="numberkey" >/</td>            
+        </tr>
+        
+	</table>	
+	</body>
+</html>

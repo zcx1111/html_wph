@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			
+			function on(){
+				/*通过id获得标签元素*/
+				var num1=document.getElementById("num1");  
+				/*Name获得存有标签元素的数组   遍历输出所有元素 */
+				var num=document.getElementsByName("num"); 
+				 /*Class获得存有标签元素的数组*/
+				var cp=document.getElementsByClassName("cp");				
+				var inp=document.getElementsByTagName("input");				
+				var inp2=document.getElementsByTagNameNS("*","input");
+				
+//				alert(num1.value);
+//				alert(num[1].value); /*数组中的第二个元素的值*/
+//				alert(cp[0].value);				
+//				遍历
+//				for(var i=0; i<num.length;i++){
+//					alert(num[i].value);
+//				}				
+//				alert(inp[1].value);				
+				alert(inp2.length);
+		}			
+		</script>		
+	</head>
+	<body>
+		<input type="text" id="num1" class="cp" name="num" /><br /><br />
+		<input type="text" id="num2" class="cp" name="num" /><br /><br />
+		<input type="text" id="num3"  name="num" /><br /><br />
+		
+		<button onclick="on('+')">+</button>
+	</body>
+</html>

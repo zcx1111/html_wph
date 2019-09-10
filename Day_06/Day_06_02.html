@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			
+			function yanz(f){
+				if (f=="username") {
+					var username=document.getElementById("username").value;
+					if (username.length>=6 & username.length<=10) {
+						document.getElementById("span1").innerText="√";
+					}
+					else{
+						document.getElementById("span1").innerText="请输入正确的密码格式";
+					}
+					
+				}
+			}
+			
+			<style>
+			
+			</style>
+			
+		</script>
+			
+	</head>
+	<body>
+		
+		<form>
+		用户名    <input type="text" id="username" onblur="yanz('username')"/><br /><br />
+		密&nbsp;&nbsp;码  <input type="text" name="password"/><br /><br />
+		
+		协议<textarea cols="30" rows="20" readonly="readonly"><!--只读readonly-->
+		ssss
+			
+		</textarea><br /><br />
+		<input type="checkbox" />同意<br /><br />
+		 <input type="button" value="确认"/><br /><br />		
+			
+			
+		</form>
+		
+	</body>
+</html>
